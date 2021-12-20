@@ -2,13 +2,13 @@
 #  SPDX-License-Identifier: MPL-2.0
 #  Copyright 2020-2021 John Mille <john@compose-x.io>
 
-import re
 import json
 import os
+import re
 import sys
+from argparse import ArgumentParser
 from os import environ, path
 from tempfile import TemporaryDirectory
-from argparse import ArgumentParser
 
 try:
     import requests
@@ -83,7 +83,9 @@ def main(schemas_zip_url):
 
     resources_file_mapping = generate_resources_mapping(dest_path)
     with open(f"{dest_path}/aws_cfn_resources_schemas.json", "w") as schemas_fd:
-        schemas_fd.write(json.dumps(resources_file_mapping, indent=2))
+        schemas_fd.write(
+            json.dumps(dict(sorted(resources_file_mapping.items())), indent=2)
+        )
 
 
 if __name__ == "__main__":
