@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aws_cfn_resources_schemas"
-version = "2021.12.18"
+version = "2021.12.29"
 description = "AWS CFN Resources JSON Schema definitions"
 authors = ["johnpreston <john@compose-x.io>"]
 license = "MPL-2.0"
@@ -66,7 +66,7 @@ omit = [
 github_url = "https://github.com/compose-x/aws_cfn_resources_schemas"
 
 [tool.tbump.version]
-current = "2021.12.18"
+current = "2021.12.29"
 regex = '''
   (?P<major>\d+)
   \.
