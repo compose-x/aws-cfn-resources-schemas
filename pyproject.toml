@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aws_cfn_resources_schemas"
-version = "0.0.1"
+version = "2021.12.18"
 description = "AWS CFN Resources JSON Schema definitions"
 authors = ["johnpreston <john@compose-x.io>"]
 license = "MPL-2.0"
@@ -67,6 +67,15 @@ github_url = "https://github.com/compose-x/aws_cfn_resources_schemas"
 
 [tool.tbump.version]
 current = "2021.12.18"
+regex = '''
+  (?P<major>\d+)
+  \.
+  (?P<minor>\d+)
+  \.
+  (?P<patch>\d+)
+  (?:(?P<rc>[\S]+))?
+  '''
+
 
 [tool.tbump.git]
 message_template = "Bump to {new_version}"
